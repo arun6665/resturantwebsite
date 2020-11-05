@@ -12,7 +12,14 @@
     <link rel="stylesheet" href="css/styles.css">
      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <title>Ristorante Con Fusion</title>
+        <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+    <title>MYRESTURANT</title>
+
 </head>
 
 <body>
@@ -24,7 +31,7 @@
             <span class="navbar-toggler-icon"></span>
 
            </button>
-           <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41"></a>
+           <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="50" width="41"></a>
             
         <div class="collapse navbar-collapse" id="Navbar">
         
@@ -33,14 +40,13 @@
          <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
 
         </ul>
          <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
-                </span>
-    </div>
+                   
+         <a >     <span class="fa fa-sign-in" id="span1"></span> Login
+                </span></a>
     </div>
     
 </nav>
@@ -48,13 +54,13 @@
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header header3">
                     <h4 class="modal-title">Login </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body modal3">
                     <form>
-                        <div class="form-row">
+                        <div class="form-row ">
                             <div class="form-group col-sm-4">
                                     <label class="sr-only" for="exampleInputEmail3">Email address</label>
                                     <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
@@ -84,15 +90,16 @@
         <div class="container">
             <div class="row row-header">
                 <div class="col-12 col-sm-7">
-                    <h1>Ristorante con Fusion</h1>
-                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                    <h1>MY RESTURANT</h1>
+                    <p>Join us for the best recipies around the world.</p>
                 </div>
                
                     <div class="col-12 col-sm-4 align-self-center">
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-1 align-self-center">
-                  <a class="btn btn-warning" role="button" data-toggle="modal"data-target="#reservemodal">Reserve Table</a>
+                  <button class="btn btn-warning" id="myBtn" role="button"        >book table
+                  </button>
                    
                   
                 </div>
@@ -106,12 +113,12 @@
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Reserve A table </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header header2">
+                    <h4 class="modal-title">Book</h4>
+                    <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body modal2">
                     <form>
                        
 <div class="form-group">
@@ -438,17 +445,14 @@
         </div>
     </footer>
  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-     <script>
-  document.addEventListener("DOMContentLoaded", function(event) { 
-    document.getElementById("option2").focus();
- });
-</script>
-<script>
+    
   
-
+    <!-- endbuild -->
+<script type="text/javascript">
  $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
@@ -462,7 +466,58 @@
                 }
             });
 </script>
+<script type="text/javascript">
+  
 
+// Get the modal
+var modal = document.getElementById("reservemodal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+$('#reservemodal').modal('show');
+
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script type="text/javascript">
+var log =document.getElementsById("span1");
+var mod=document.getElementById("loginModal");
+log.click = function() {
+  // body...
+  $('#loginModal').modal('show');
+};
+
+  </script>
 </body>
-
 </html>
